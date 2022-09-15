@@ -22,8 +22,11 @@
   background-color: #fff;
 }
 
-.menu .link:hover {
+.menu .link:hover{
   text-decoration: underline;
+}
+.menu .link.curent {
+background-color: aquamarine;
 }
 
 footer {

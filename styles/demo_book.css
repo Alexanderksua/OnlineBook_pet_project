@@ -30,9 +30,11 @@ ul {
   margin-right: auto;
   outline: 1px solid gainsboro;
 }
-
+.list-item img{
+  display: block;
+}
 .list>.list-item:nth-child(n):hover {
-outline: 3px solid rgb(36, 36, 236);
+  outline: 3px solid rgb(36, 36, 236);
 }
 
 ul.list {
@@ -66,16 +68,100 @@ ul.list {
   display: inline-flex;
   width: 441px;
   height: 667px;
-  /* border-radius: 50%; */
+  /* border-radius: 5%; */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .icon.with-bg {
-  background-image: url("/images/00-99/0.png");
+  background-image: url("/images/00-99-Back-Side/0.jpg");
 }
 
 .icon.with-icon:hover {
-  background-image: url("/images/00-99/0.png");
+  background-image: url("/images/00-99-Upper-Side/0.png");
+}
+
+/* */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #607d8b;
+  border-radius: 5px;
+  }
+
+.logo {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #ff5722;
+  text-decoration: none;
+  color: #fff;
+  }
+
+.contacts {
+  display: flex;
+  padding: 15px;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+  background-color: green;
+  border-radius: 5px;
+}
+
+.contacts .link {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.contacts>.item.item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.menu {
+  display: flex;
+  padding: 15px;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #2196f3;
+}
+
+.menu .link {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: #fff;
+}
+
+.menu>.item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.logo:hover,
+.logo:focus,
+.menu .link:hover,
+.menu .link:focus,
+.contacts .link:hover,
+.contacts .link:focus {
+  background-color: red;
+  box-shadow: inset 3px 3px 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.logo:hover,
+.logo:focus,
+.menu .link:hover,
+.menu .link:focus,
+.contacts .link:hover,
+.contacts .link:focus
+ {
+  font-size: 20px;
 }
