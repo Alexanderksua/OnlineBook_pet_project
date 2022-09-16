@@ -1,36 +1,50 @@
+:root {
+  --background-blue: #2196f3;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
+  display: block;
   max-width: 1080px;
   margin: 0 auto;
-  padding: 8px;
+  padding: 0 10px 0 10px;
 }
-img {
+.hero{
+  padding-top: 100px;
+}
+.qr-code {
   display: block;
+  max-width: 100%;
+  margin: 0 auto;
 }
-.menu {
-  padding: 10px;
-  margin: 0;
+
+.menu nav {
+    position: fixed;
+      background-color: var(--background-blue);
+  max-width: 1080px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   border-radius: 4px;
-  background-color: #2196f3;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-
-  /*  Making ul.menu a Flex container  */
-  display: flex;
-}
-
-.menu>.item:not(:last-child) {
-  margin-right: 10px;
+  box-shadow:
+    0px 2px 1px -1px rgba(0 0 0 / 0.2),
+    0px 1px 1px 0px rgba(0 0 0 / 0.14),
+    0px 1px 3px 0px rgba(0 0 0 / 0.12);
 }
 
 .menu .link {
   display: block;
+  margin: .1em;
   padding: 10px;
   border-radius: 4px;
   text-decoration: none;
@@ -39,17 +53,13 @@ img {
 }
 
 .menu .link:hover {
-  text-decoration: underline;
+  text-decoration: overline;
 }
 
 .menu .link.curent {
-  background-color: aquamarine;
+  background: aquamarine;
 }
 
 footer {
-  background-color: rgb(232, 219, 204);
-}
-
-.hero {
-  background-color: bisque;
+  background-color: rgb(232 219 204);
 }
