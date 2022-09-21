@@ -15,57 +15,336 @@
   <meta name=msapplication-TileColor content=#da532c>
   <meta name=theme-color content=#ffffff>
   <!-- Favicon End -->
-  <title>Книга-Онлайн</title>
+  <title>Книга-Онлайн Библиотека</title>
   <!--CSS-->
-  <link rel=stylesheet href=./styles/style.css>
+  <style type="text/css">
+    :root {
+      --background-blue: #2196f3;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      display: block;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 10px 0 10px;
+    }
+
+    section:nth-child(1) {
+      padding-top: 1.5em;
+    }
+
+    section:not(:first-child) {
+      padding-top: 10px;
+    }
+
+    .qr-code {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .menu nav {
+      position: fixed;
+      background-color: var(--background-blue);
+      max-width: 1600px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      border-radius: 4px;
+      box-shadow:
+        0px 2px 1px -1px rgb(0 0 0 / .2),
+        0px 1px 1px 0px rgb(0 0 0 / .14),
+        0px 1px 3px 0px rgb(0 0 0 / .12);
+    }
+
+    .menu .link {
+      display: block;
+      margin: .1em;
+      padding: 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: black;
+      background-color: #fff;
+    }
+
+    .menu .link:hover {
+      text-decoration: overline;
+    }
+
+    .menu .link.curent {
+      background: aquamarine;
+    }
+
+    /* Library START BEM-CSS */
+    .alert {
+      max-width: 400px;
+      border-radius: 4px;
+      padding: 20px;
+      font-size: 16px;
+      color: #2a2a2a;
+      background-color: #fff;
+      box-shadow:
+        0px 2px 1px -1px rgb(0 0 0 / .2),
+        0px 1px 1px 0px rgb(0 0 0 / .14),
+        0px 1px 3px 0px rgb(0 0 0 / .12);
+      margin: 10px;
+    }
+
+    .alert--success {
+      background-color: #388e3c;
+      color: #fff;
+    }
+
+    .alert--error {
+      background-color: #f44336;
+      color: #fff;
+    }
+
+    .alert--warning {
+      background-color: #ffc107;
+    }
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /*  */
+    .button__icon,
+    .button__label {
+      display: block;
+    }
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #888;
+    }
+
+    .button__icon {
+      background-color: #2196f3;
+    }
+
+    .button__label--start:hover {
+      background-color: #fff;
+    }
+
+    .button__label--end:active {
+      background-color: red;
+    }
+
+    /* */
+    input,
+    label {
+      display: block;
+    }
+
+    input {
+      padding: 4px;
+      border: 1px solid red;
+      border-radius: 4px;
+    }
+
+    label {
+      padding: 10px;
+    }
+
+    input {
+      caret-color: #388e3c;
+    }
+
+    input::placeholder {
+      color: #777;
+
+    }
+
+    .rate {
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* Library END */
+    footer {
+      background-color: rgb(232 219 204);
+    }
+  </style>
 </head>
 
 <body>
+
   <div class=container>
     <header id=page-top>
-      <a style='display:block; text-transform: uppercase;color: green; text-align: right;'
-        href="./index.html">Приветственная страница</a>
-
-      <nav class=menu>
-        <a class=link title='Свяжитесь с нами' href=./demo_book.html>
-          Книга
-        </a>
-        <a class='link' title='Это мыслительный процесс' href=./reading.html>
-          Что такое чтение?
-        </a>
-        <a class=link title='Наши книги доступные к чтению на сайте' href=./library.html>
-          Библиотека
-        </a>
-        <a class=link title='Описание нашей команды' href=./about.html>
-          О нас
-        </a>
-        <a class=link title='Мы ищем специалистов' href=./vacancy.html>
-          Вакансии
-        </a>
-        <a class=link title='Предоставьте ваши книги к чтению' href=./authors.html>
-          Для Авторов и Библиотек
-        </a>
-        <a class=link title='Научная база знаний и исследований' href=./knowlege.html>
-          Фонд знаний
-        </a>
-      </nav>
-
+      <div class=menu>
+        <nav>
+          <a class=link title='Свяжитесь с нами' href=./demo_book.html>
+            Книга
+          </a>
+          <a class=link title='Это мыслительный процесс' href=./reading.html>
+            Что такое чтение?
+          </a>
+          <a class=link title='Наши книги доступные к чтению на сайте' href=./library.html>
+            Библиотека
+          </a>
+          <a class=link title='Описание нашей команды' href=./about.html>
+            О нас
+          </a>
+          <a class=link title='Мы ищем специалистов' href=./vacancy.html>
+            Вакансии
+          </a>
+          <a class=link title='Предоставьте ваши книги к чтению' href=./authors.html>
+            Для Авторов и Библиотек
+          </a>
+          <a class=link title='Научная база знаний и исследований' href=./knowlege.html>
+            Фонд знаний
+          </a>
+          <a class='link' title='Что конкретно мы делаем' href="./index.html">
+            Приветственная страница
+          </a>
+        </nav>
+      </div>
     </header>
-    <main>
-      <h1>Библиотека</h1>
-      <a href="./demo_book.html">Демонстрационная книга</a>
-      <a href="#page-top"><img src="./images/Иконка_стрелки_вверх_(ei).svg" alt="На верх &#8593;" width="50"
-          height=""></a>
-    </main>
+  </div>
+  <main>
+    <div class=container>
+      <section>
+        <h1>Библиотека</h1>
+
+        <div class="alert">You have new unread messages.</div>
+        <div class="alert alert--success">Transaction completed.</div>
+        <div class="alert alert--error">Transaction error.</div>
+        <div class="alert alert--warning">The site is undergoing maintenance.</div>
+
+      </section>
+
+      <label for="fav">Choose your favorite browser</label>
+      <input type=text list="browser" name="fav" id="fav">
+      <datalist id="browser">
+        <option value="Edge">
+          Edge
+        </option>
+        <option value="Firefox">
+          Firefox
+        </option>
+        <option value="Chrome">
+          Chrome
+        </option>
+        <option value="Opera">
+          Opera
+        </option>
+        <option value="Safari">
+          Safari
+        </option>
+      </datalist>
+
+      <button class="button" type="button">
+        <span class="button__label button__label--start button__label--end">In to cart</span>
+        <img class="button__icon " src="./images/rcube.svg" width="50" height="50"></img>
+      </button>
+
+      <section>
+        <h1>Oscar Redemption</h1>
+        <p>Here`s your chance to set the record straight: tell us what year the wrong film got nominated, and which film
+          shoud have received a nod...</p>
+        <form>
+          <fieldset>
+            <legend>About the offending film (part 1 of 3)</legend>
+            <div>
+              <label for="film">The film in question?</label>
+              <input id=film name=film type="text" placeholder="e.g. King Kong" required aria-required="true" autofocus>
+            </div>
+
+            <div>
+              <label for="year">Year Of Crime</label>
+              <input id=year name=year type="text" placeholder="19XX-2022" required aria-required="true">
+            </div>
+
+            <div>
+              <label for="award">Award Won</label>
+              <input id=award name=award type="text" placeholder="Jhon Smith" required aria-required="true">
+            </div>
+            <div>
+              <label for="wrong">Tell us that`s wrong?</label>
+              <input id=wrong name=wrong type="textarea" rows=3 cols=50 placeholder="I fell asleep whithin 20 minutes"
+                required aria-required="true">
+            </div>
+
+            <div class="rate">
+              <label for="rate">How you rate it (1 is woeful, 10 is awesomeesauce)</label>
+              <input id=rate name=rate type="range" min="1" max="10" value="1">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>What should have won? (part 2 of 3)</legend>
+            <div>
+              <label for="user-winer">The film should have won</label>
+              <input id=user-winer name=user-winer type="text" placeholder="e.g. Cabel Gay" required
+                aria-required="true">
+            </div>
+
+            <div>
+              <label for="user-wrong">Tell us why it should have won?</label>
+              <input id=user-wrong name=user-wrong type="text" placeholder="Hello? CAABBLEE GGAAYY!!" required
+                aria-required="true">
+            </div>
+
+            <div>
+              <label for="user-rate">How you rate it (1 is woeful, 10 is awesomeesauce)</label>
+              <input id=user-rate name=user-rate type="number" min="1" max="10" value="1">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tell us about you? (part 3 of 3)</legend>
+            <label for="name">Your Name</label>
+            <input id=name name=name type="text" placeholder="Alex Sporter" required aria-required="true">
+
+            <label for="color">Your favorite color</label>
+            <input id=color name=color type="text" placeholder="    ">
+
+            <label for="date">Date/Time</label>
+            <input id=date name=date type="date" min="1920-01-01">
+
+            <label for="tel">Telephone (so we can berate you if you`re wrong)</label>
+            <input id=tel name=user-tel type="tel" placeholder="+38(0XX) XXX XX XX">
+
+            <label for="email">Your E-mail address</label>
+            <input id=email name=user-email type="email" placeholder="server@mail.domain" required aria-required="true">
+
+            <label for="site">Your Social Media links</label>
+            <input id=site name=user-site type="text" placeholder="FB, LI, TW, etc.">
+          </fieldset>
+          <button type="submit">Submit truth</button>
+        </form>
+      </section>
+      <a href=#page-top><img src=./images/Иконка_стрелки_вверх_(ei).svg alt='На верх &#8593;' width=50 height=''></a>
+    </div>
+
+  </main>
+  <div class=container>
     <footer>
-      <adress>
-        <h2>Контакты</h2>
-        <ul id="contacts">
-          <li><a href="mailto:alexanderksua@gmail.com">alexanderksua@gmail.com</a></li>
-          <li><a href="tel:+380950370108">+380950370108</a></li>
+      <h2>Контакты</h2>
+      <address>
+        <ul id=contacts>
+          <li><a href=mailto:alexanderksua@gmail.com>alexanderksua@gmail.com</a></li>
+          <li><a href=tel:+380950370108>+38 095 037 01 08</a></li>
         </ul>
-      </adress>
+      </address>
     </footer>
+  </div>
 </body>
 
 </html>
